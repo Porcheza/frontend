@@ -1,0 +1,24 @@
+:root {
+  --app-initialing-cube-bg-color-1: rgba(156, 218, 255, 0.75);
+  --app-initialing-cube-bg-color-2: rgba(255, 225, 125, 0.75);
+  --app-initialing-cube-bg-color-3: rgba(250, 179, 158, 0.75);
+  --app-initialing-cube-bd-color-1: rgba(156, 218, 255, 1);
+  --app-initialing-cube-bd-color-2: rgba(255, 225, 125, 1);
+  --app-initialing-cube-bd-color-3: rgba(250, 179, 158, 1);
+
+  --app-border-color: #07091920;
+  --custom-scrollbar-bg-color: #fafafa;
+  --custom-scrollbar-thumb-color: #c1c1c1;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+}

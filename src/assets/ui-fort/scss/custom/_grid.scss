@@ -1,0 +1,28 @@
+.grid__thumbnails {
+    --grid-size: 120px;
+}
+
+@include media-breakpoint-up(md) {
+    .grid__thumbnails {
+        --grid-size: 140px;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .grid__thumbnails {
+        --grid-size: 180px;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .grid__thumbnails {
+        --grid-size: 240px;
+    }
+}
+
+.grid__thumbnails {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--grid-size), max-content));
+    grid-auto-rows: minmax(var(--grid-size), max-content);
+    gap: 0.5rem;
+}

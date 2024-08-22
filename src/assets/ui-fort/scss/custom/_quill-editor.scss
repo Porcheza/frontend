@@ -1,0 +1,14 @@
+.quill-editor {
+    &--round {
+        .ql-toolbar {
+            border-top-left-radius: 10.4px;
+            border-top-right-radius: 10.4px;
+
+            +.ql-container {
+                border-bottom-left-radius: 10.4px;
+                border-bottom-right-radius: 10.4px;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,88 @@
+// Core
+
+@import 'vendor/bootstrap/scss/functions';
+@import 'scss/variables/functions';
+
+@import 'vendor/bootstrap/scss/variables';
+@import 'scss/variables/variables';
+
+@import 'vendor/bootstrap/scss/mixins';
+@import 'scss/variables/mixins';
+
+// Bootstrap base
+
+@import 'vendor/bootstrap/bootstrap-base';
+
+// Bootstrap Vue
+
+// @import 'bootstrap-vue/src';
+
+// Components
+
+@import 'scss/components';
+
+// Presentation blocks
+
+@import 'scss/presentation-blocks';
+
+// Vendors
+
+// @import 'vendor/animate-scss/animate';
+// @import 'vendor/slick/scss/slick';
+// @import 'vendor/perfect-scrollbar/scss/perfect-scrollbar';
+// @import 'vendor/sweet-alerts/sweet-alerts';
+// @import 'vendor/vue-select/scss/vue-select';
+
+html,
+body {
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  padding-inline-start: 30px;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.app-main {
+  display: flex;
+  flex: 1 auto;
+  min-width: 0;
+  flex-direction: column;
+  position: relative;
+}
+
+.vdp-datepicker {
+  .form-control[readonly] {
+    background-color: #fff;
+  }
+
+  .form-control:disabled {
+    background-color: #f4f5fd;
+  }
+}
+
+.ql-editor {
+  &[contenteditable='false'] {
+    background-color: #f4f5fd;
+  }
+}
+
+.form-control {
+  &.is-invalid,
+  &.is-valid {
+    background-image: none !important;
+  }
+}

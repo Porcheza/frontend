@@ -1,0 +1,144 @@
+@import 'custom/box-media';
+@import 'custom/quill-editor';
+@import 'custom/modal-create-or-update-ultimate-learning-outcome';
+@import 'custom/transitions';
+@import 'custom/grid';
+@import 'custom/badge';
+
+a[disabled] {
+  pointer-events: none;
+  color: $btn-link-disabled-color;
+}
+
+.modal-backdrop {
+  width: 100%;
+  height: 100%;
+}
+
+.no-message {
+  &__title {
+    font-size: 19px;
+    font-weight: bold;
+  }
+
+  &__body {
+    font-size: 15.2px;
+    color: rgba(122, 123, 151, 1);
+  }
+}
+
+.p-no-mb {
+  p {
+    margin-bottom: 0 !important;
+  }
+}
+
+.flex {
+  flex: 1;
+}
+
+// .ql-editor.ql-blank::before {
+//   font-family: Heebo;
+//   font-style: normal;
+//   font-weight: normal;
+//   font-size: 15.2px;
+//   line-height: 22px;
+//   color: #d1d2db;
+// }
+
+// .ql-container.ql-snow {
+//   background: #ffffff;
+//   border: 1px solid #d1d2db;
+//   box-sizing: border-box;
+//   border-radius: 0 0 4.64px 4.64px;
+// }
+
+// .ql-toolbar.ql-snow {
+//   background: #ffffff;
+//   border: 1px solid #d1d2db;
+//   box-sizing: border-box;
+//   border-radius: 4.64px 4.64px 0 0;
+// }
+
+$base-padding-indent: 1.25;
+
+.ql-container {
+  font-family: $font-family-sans-serif !important;
+  font-size: $font-size-base !important;
+}
+
+.ql-editor {
+  line-height: 1.52 !important;
+
+  &--display {
+    height: auto !important;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+
+  &--large {
+    .ql-editor {
+      height: auto !important;
+      max-height: 30rem !important;
+    }
+  }
+
+  p {
+    margin-bottom: 0 !important;
+  }
+
+  ol {
+    padding-left: 0.5rem;
+
+    li:not(.ql-direction-rtl) {
+      padding-left: 0.75em;
+    }
+  }
+
+  ul {
+    padding-left: 0;
+
+    li:not(.ql-direction-rtl) {
+      padding-left: 0.75em;
+    }
+  }
+
+  .ql-indent,
+  li.ql-indent {
+    @for $i from 1 through 8 {
+      &-#{$i}:not(.ql-direction-rtl) {
+        padding-left: #{$base-padding-indent + (($i - 1) * 1)}em;
+      }
+    }
+  }
+}
+
+.slide-fade-right-enter {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.slide-fade-right-enter-active {
+  transition: all 0.3s ease-in;
+}
+
+.slide-fade-right-leave-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-right-leave-to {
+  transform: translateX(0);
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to
+
+/* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}

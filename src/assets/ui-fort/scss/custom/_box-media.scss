@@ -1,0 +1,13 @@
+.box-media {
+    border: 1px solid #d1d2db;
+    border-radius: 10.4px;
+    
+    &__required {
+      border: 1px solid #f83245 !important;
+      border-radius: 10.4px !important;
+    }
+
+    &--with-padding {
+        padding: 16px 20px;
+    }
+  }

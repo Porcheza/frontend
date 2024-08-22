@@ -1,0 +1,30 @@
+.container__badge {
+  --badge-size: 100px;
+}
+
+@include media-breakpoint-up(md) {
+  .container__badge {
+    --badge-size: 89px;
+
+    &--large {
+      --badge-size: 148px;
+    }
+  }
+}
+
+.container__badge {
+  display: flex;
+  width: var(--badge-size);
+  height: auto;
+
+  &--centered {
+    margin: 0 auto;
+  }
+}
+
+.img__badge {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
