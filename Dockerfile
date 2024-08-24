@@ -7,6 +7,10 @@ WORKDIR /app/frontend
 
 COPY ./package*.json ./
 
-RUN yarn install
+RUN npm install
 
 COPY . .
+
+FROM development as build
+
+RUN npm run build

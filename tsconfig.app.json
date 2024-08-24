@@ -8,6 +8,6 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": ["@intlify/unplugin-vue-i18n/messages", "jquery"]
+    "lib": ["ESNext", "DOM"],
   }
 }

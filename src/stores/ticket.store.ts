@@ -1,24 +1,42 @@
-import { useAxiosBackendService } from "@/composables/axios-backend-service";
+import { useAxiosBackendService } from "../composables/axios-backend-service";
 import { defineStore } from "pinia";
-import { ref } from "vue";
-import type { ITicket } from "../models/ticket.model";
+import type { ITicket } from "../models/ticket.modal";
+import { computed, ref } from "vue";
 
-export const useSectorStore = defineStore("ticket", () => {
+export const useTicketStore = defineStore("ticket", () => {
   const { axiosInstance } = useAxiosBackendService();
-  const _cacheTicket = ref<ITicket[]>([]);
+  const _cacheTickets = ref<ITicket[]>([]);
+  const cacheTickets = computed(() => _cacheTickets.value);
 
-  const getTicket = async () => {
-    if (_cacheTicket.value.length) return _cacheTicket.value;
+  const fetchTickets = async () => {
+    const res = await axiosInstance.get<ITicket[]>(`/ticket`);
 
-    const res = await axiosInstance.get<ITicket[]>(`/ticket/getTicket`);
     if (res.data) {
-      _cacheTicket.value = res.data;
+      _cacheTickets.value = res.data;
       return res.data;
     }
+
+    return null;
+  };
+
+  const updateTicket = async (ticket: ITicket) => {
+    const res = await axiosInstance.patch<ITicket>(
+      `/ticket/${ticket.id}`,
+      ticket
+    );
+
+    if (res.data) {
+      const index = _cacheTickets.value.findIndex((t) => t.id === ticket.id);
+      _cacheTickets.value[index] = res.data;
+      return res.data;
+    }
+
     return null;
   };
 
   return {
-    getTicket,
+    fetchTickets,
+    updateTicket,
+    cacheTickets,
   };
 });
