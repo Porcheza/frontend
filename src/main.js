@@ -5,12 +5,17 @@ import pinia from './plugins/pinia';
 import App from './App.vue';
 import router from './router';
 import 'bootstrap';
-// import 'vue-skeletor/dist/vue-skeletor.css';
+import { registerFontAwesomIcon } from './plugins/font-awesome';
+import { registerDayJs } from './plugins/day';
 
 const initialize = async () => {
     const app = createApp(App);
     
     app.use(pinia);
+
+    registerFontAwesomIcon();
+
+    registerDayJs();
 
     app.use(router);
   

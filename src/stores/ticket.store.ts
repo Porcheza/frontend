@@ -1,6 +1,10 @@
 import { useAxiosBackendService } from "../composables/axios-backend-service";
 import { defineStore } from "pinia";
-import type { ITicket } from "../models/ticket.modal";
+import type {
+  CreateTicketDto,
+  ITicket,
+  UpdateTicketDto,
+} from "../models/ticket.modal";
 import { computed, ref } from "vue";
 
 export const useTicketStore = defineStore("ticket", () => {
@@ -19,7 +23,18 @@ export const useTicketStore = defineStore("ticket", () => {
     return null;
   };
 
-  const updateTicket = async (ticket: ITicket) => {
+  const createTicket = async (ticket: CreateTicketDto) => {
+    const res = await axiosInstance.post<ITicket>("/ticket", ticket);
+
+    if (res.data) {
+      _cacheTickets.value.push(res.data);
+      return res.data;
+    }
+
+    return null;
+  };
+
+  const updateTicket = async (ticket: UpdateTicketDto) => {
     const res = await axiosInstance.patch<ITicket>(
       `/ticket/${ticket.id}`,
       ticket
@@ -36,6 +51,7 @@ export const useTicketStore = defineStore("ticket", () => {
 
   return {
     fetchTickets,
+    createTicket,
     updateTicket,
     cacheTickets,
   };
