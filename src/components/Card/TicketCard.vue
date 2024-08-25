@@ -6,7 +6,7 @@
     }"
   >
     <div class="card-body curser_pointer" @click="onEdit(ticket)">
-      <div class="mt-3 line-height-sm">
+      <div class="line-height-sm">
         <h3 class="font-weight-bold font-size-lg mb-1 text-truncate__title">
           {{ ticket.title }}
         </h3>
@@ -63,45 +63,6 @@ const templateStats: { [key: string]: { className: string } } = {
 </script>
 
 <style lang="scss" scoped>
-$pendding: #3c44b1;
-$background-pendding: #eceef7;
-$accepted: #f4772e;
-$background-accepted: #fffbf2;
-$resolved: #1bc943;
-$background-resolved: #e5f9ed;
-$rejected: #f83245;
-$background-rejected: #fff5f6;
-
-.active {
-  &__pendding {
-    border-left-color: $pendding !important;
-    &:hover {
-      background-color: $background-pendding;
-    }
-  }
-
-  &__accepted {
-    border-left-color: $accepted !important;
-    &:hover {
-      background-color: $background-accepted;
-    }
-  }
-
-  &__resolved {
-    border-left-color: $resolved !important;
-    &:hover {
-      background-color: $background-resolved;
-    }
-  }
-
-  &__rejected {
-    border-left-color: $rejected !important;
-    &:hover {
-      background-color: $background-rejected;
-    }
-  }
-}
-
 .card-box {
   border-left-width: 3px;
   border-radius: 0.42rem;

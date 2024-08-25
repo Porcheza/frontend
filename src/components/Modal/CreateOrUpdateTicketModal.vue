@@ -9,10 +9,18 @@
   >
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header align-items-center">
           <h5 class="modal-title">
             {{ ticket.id ? "Edit" : "Create" }} Ticket
           </h5>
+          <div
+            class="badge"
+            :class="{
+              [`badge__${templateStats[status].className}`]: true,
+            }"
+          >
+            {{ status }}
+          </div>
         </div>
         <div class="modal-body">
           <form>
@@ -27,7 +35,6 @@
                 id="ticket__title"
                 required
               />
-              <div class="invalid-feedback">Please provide a valid zip.</div>
             </div>
             <div class="mb-4">
               <label
@@ -145,6 +152,21 @@ const formatDate = (dateString: string) => {
   const date = dayjs(dateString);
   // Then specify how you want your dates to be formatted
   return date.format("MMM D, YYYY h:mm A");
+};
+
+const templateStats: { [key: string]: { className: string } } = {
+  PENDING: {
+    className: "pendding",
+  },
+  ACCEPTED: {
+    className: "accepted",
+  },
+  RESOLVED: {
+    className: "resolved",
+  },
+  REJECTED: {
+    className: "rejected",
+  },
 };
 </script>
 

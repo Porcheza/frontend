@@ -112,7 +112,7 @@ onMounted(() => {
 @media (min-width: 768px) {
   .landing__container {
     padding: 2rem 1rem;
-    width: calc(100% - 100px);
+    width: 80%;
   }
 }
 </style>
