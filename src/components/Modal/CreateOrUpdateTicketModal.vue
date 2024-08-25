@@ -86,7 +86,7 @@
                 Close
               </button>
               <button type="submit" class="btn btn-primary" @click="onSubmit">
-                {{ ticket ? "Save" : "Create" }}
+                {{ ticket.id ? "Save" : "Create" }}
               </button>
             </div>
           </form>
