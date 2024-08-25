@@ -1,7 +1,7 @@
 <template>
   <div class="filter__container">
     <div>
-      <label for="sort">Sort By:</label>
+      <strong>Sort By:</strong>
       <select v-model="sortBy" class="custom-select ml-3">
         <option :value="null">None</option>
         <option :value="{ createdAt: 'DESC' }">Created</option>
