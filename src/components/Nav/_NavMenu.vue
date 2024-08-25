@@ -1,8 +1,5 @@
 <template>
-  <ul class="navbar-nav ml-auto nav-items">
-    <li><button class="btn btn-primary btn-sm">create</button></li>
-    <li>Filter</li>
-  </ul>
+  <ul class="navbar-nav mr-auto nav-items"></ul>
 </template>
 
 <script setup lang="ts">

@@ -17,9 +17,9 @@
       </span>
     </button>
 
-    <div class="d-none d-md-flex navbar-content__container">
+    <!-- <div class="d-none d-md-flex navbar-content__container">
       <NavMenu></NavMenu>
-    </div>
+    </div> -->
   </nav>
 </template>
 

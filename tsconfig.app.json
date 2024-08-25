@@ -11,5 +11,6 @@
     "lib": ["ESNext", "DOM"],
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "types": ["jquery"]
   }
 }

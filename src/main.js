@@ -5,6 +5,8 @@ import pinia from './plugins/pinia';
 import App from './App.vue';
 import router from './router';
 import 'bootstrap';
+import 'bootstrap/dist/js/bootstrap';
+import 'bootstrap/dist/js/bootstrap.bundle.js'
 import { registerFontAwesomIcon } from './plugins/font-awesome';
 import { registerDayJs } from './plugins/day';
 

@@ -5,15 +5,15 @@ import type {
   ITicket,
   UpdateTicketDto,
 } from "../models/ticket.modal";
-import { computed, ref } from "vue";
+import { ref } from "vue";
 
 export const useTicketStore = defineStore("ticket", () => {
   const { axiosInstance } = useAxiosBackendService();
   const _cacheTickets = ref<ITicket[]>([]);
-  const cacheTickets = computed(() => _cacheTickets.value);
 
-  const fetchTickets = async () => {
-    const res = await axiosInstance.get<ITicket[]>(`/ticket`);
+  const fetchTickets = async (params = {}) => {
+    _cacheTickets.value = [];
+    const res = await axiosInstance.get<ITicket[]>(`/ticket`, { params });
 
     if (res.data) {
       _cacheTickets.value = res.data;
@@ -53,6 +53,6 @@ export const useTicketStore = defineStore("ticket", () => {
     fetchTickets,
     createTicket,
     updateTicket,
-    cacheTickets,
+    _cacheTickets,
   };
 });

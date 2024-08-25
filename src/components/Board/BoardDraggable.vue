@@ -66,8 +66,9 @@ const openModal = (id: string) => {
 
 <style>
 .card__board {
-  height: 80vh;
-  width: 100%;
+  height: 100%;
+  width: 23%;
+  min-width: 240px;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 20px 10px 10px 10px;
@@ -76,26 +77,13 @@ const openModal = (id: string) => {
 }
 
 .draggable__container {
-  height: auto;
-  width: 80%;
+  height: calc(100vh - 180px);
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   grid-gap: 2rem;
-}
-
-@media (min-width: 1024px) {
-  .draggable__container {
-    height: calc(100vh - 120px);
-    width: 100%;
-    flex-wrap: nowrap;
-  }
-
-  .card__board {
-    height: 100%;
-    width: 23%;
-  }
 }
 
 .draggable__board {
