@@ -4,7 +4,8 @@
       <div class="d-flex flex-row justify-content-between">
         <h3 class="mb-0">{{ board.name }}</h3>
         <FontAwesomeIcon
-          class="curser_pointer"
+          ref="icon__add-ticket"
+          class="curser_pointer icon__add-ticket"
           icon="fa-solid fa-plus-circle"
           size="2x"
           @click="() => openModal(`modal_${board.name}`)"
@@ -12,6 +13,7 @@
       </div>
       <div class="div-divider"></div>
       <Draggable
+        ref="draggable"
         :id="board.name"
         :key="board.name"
         :tickets="board.tickets"
@@ -22,6 +24,8 @@
         @on-changing="() => (disabled = true)"
       ></Draggable>
       <CreateOrUpdateTicketModal
+        name="CreateOrUpdateTicketModal"
+        :key="board.name"
         :id="`modal_${board.name}`"
         :ticket="null"
         :status="board.name"

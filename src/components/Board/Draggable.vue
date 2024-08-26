@@ -1,5 +1,6 @@
 <template>
   <draggable
+    class="draggable"
     :list="tickets"
     group="tickes"
     item-key="id"
@@ -7,7 +8,14 @@
     :disabled="props.disabled"
   >
     <template #item="{ element }">
-      <TicketCard :ticket="element" @click="onClick(element)" />
+      <TicketCard
+        name="TicketCard"
+        ref="ticketCard"
+        class="draggable__ticket"
+        :key="element.id"
+        :ticket="element"
+        @click="onClick(element)"
+      />
     </template>
   </draggable>
 </template>

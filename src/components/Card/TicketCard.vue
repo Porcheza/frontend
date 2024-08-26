@@ -30,8 +30,6 @@ import { ref } from "vue";
 import CreateOrUpdateTicketModal from "../Modal/CreateOrUpdateTicketModal.vue";
 import { Modal } from "bootstrap";
 
-const emit = defineEmits(["onEdit"]);
-
 const props = defineProps<{
   ticket: ITicket;
 }>();

@@ -1,7 +1,7 @@
 <template>
   <div class="filter__container">
-    <div>
-      <strong>Sort By:</strong>
+    <div class="sort-by">
+      <strong class="title_sort">Sort By:</strong>
       <select v-model="sortBy" class="custom-select ml-3">
         <option :value="null">None</option>
         <option :value="{ createdAt: 'DESC' }">Created</option>
@@ -11,7 +11,7 @@
 
     <div class="btn-group dropend">
       <button
-        class="btn btn-link dropdown-toggle"
+        class="btn btn-link dropdown-toggle dropdown__filter"
         type="button"
         id="dropdownFilterStatus"
         data-bs-toggle="dropdown"
@@ -21,19 +21,17 @@
         Filter
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownFilterStatus">
-        <div class>
-          <div class="form-check m-3" v-for="st in status">
-            <input
-              :id="`selected-${st}`"
-              v-model="selectedStatus"
-              class="form-check-input"
-              type="checkbox"
-              :value="st"
-            />
-            <label class="form-check-label ml-2" :for="`selected-${st}`">
-              {{ st }}
-            </label>
-          </div>
+        <div class="form-check m-3" v-for="st in status">
+          <input
+            :id="`selected-${st}`"
+            v-model="selectedStatus"
+            class="form-check-input"
+            type="checkbox"
+            :value="st"
+          />
+          <label class="form-check-label ml-2" :for="`selected-${st}`">
+            {{ st }}
+          </label>
         </div>
       </div>
     </div>

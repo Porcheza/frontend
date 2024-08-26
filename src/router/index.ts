@@ -3,7 +3,7 @@ import DefaultLayout from "../components/Layout/DefaultLayout.vue";
 
 const router = createRouter({
   sensitive: true,
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",

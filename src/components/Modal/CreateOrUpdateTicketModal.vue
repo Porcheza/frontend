@@ -31,7 +31,7 @@
               <input
                 v-model="ticket.title"
                 type="text"
-                class="form-control"
+                class="form-control input__title"
                 id="ticket__title"
                 required
               />
@@ -44,7 +44,7 @@
               >
               <textarea
                 v-model="ticket.description"
-                class="form-control"
+                class="form-control input__description"
                 id="ticket__description"
                 rows="5"
               ></textarea>
@@ -57,7 +57,7 @@
               >
               <textarea
                 v-model="ticket.contactInfo"
-                class="form-control"
+                class="form-control input__contact-info"
                 id="ticket__description"
                 rows="3"
               ></textarea>
@@ -67,25 +67,33 @@
               <label class="form-label mr-2 mb-0 font-weight-bold"
                 >Created:</label
               >
-              <p class="m-0">{{ formatDate(ticket.createdAt) }}</p>
+              <p class="m-0 time__created">
+                {{ formatDate(ticket.createdAt) }}
+              </p>
             </div>
             <div class="mb-4 d-flex flex-row">
               <label class="form-label mr-2 mb-0 font-weight-bold"
                 >Last updated:</label
               >
-              <p class="m-0">{{ formatDate(ticket.updatedAt) }}</p>
+              <p class="m-0 time__updated">
+                {{ formatDate(ticket.updatedAt) }}
+              </p>
             </div>
 
             <div class="custom_footer">
               <button
                 type="button"
-                class="btn btn-secondary"
+                class="btn btn-secondary btn__close"
                 data-bs-dismiss="modal"
                 @click="() => (ticket = { ...props.ticket } as ITicket)"
               >
                 Close
               </button>
-              <button type="submit" class="btn btn-primary" @click="onSubmit">
+              <button
+                type="submit"
+                class="btn btn-primary btn__submit"
+                @click="onSubmit"
+              >
                 {{ ticket.id ? "Save" : "Create" }}
               </button>
             </div>

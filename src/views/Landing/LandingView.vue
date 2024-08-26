@@ -1,7 +1,12 @@
 <template>
   <div class="landing__container">
-    <FilterTicket @on-filter="onFilter" class="mb-3"></FilterTicket>
+    <FilterTicket
+      name="FilterTicket"
+      @on-filter="onFilter"
+      class="mb-3"
+    ></FilterTicket>
     <BoardDraggable
+      name="BoardDraggable"
       key="boards"
       :boards="boards"
       @on-move-success="onMoveSuccess"
